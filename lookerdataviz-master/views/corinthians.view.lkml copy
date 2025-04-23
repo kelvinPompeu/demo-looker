@@ -1,0 +1,41 @@
+view: corinthians {
+  derived_table: {
+    sql:
+    SELECT
+      25 AS xField, 40 AS yField, "gol" AS resultField, "Kelvin" AS nome_jogado
+    UNION ALL
+    SELECT
+      33 AS xField, 30 AS yField, "gol" AS resultField, "Memphis" AS nome_jogado
+    UNION ALL
+    SELECT
+      29 AS xField, 14 AS yField, "erro" AS resultField, "Garro" AS nome_jogado
+    UNION ALL
+    SELECT
+      22 AS xField, 25 AS yField, "gol" AS resultField, "yuri Alberto" AS nome_jogado
+    UNION ALL
+    SELECT
+      27 AS xField, 19 AS yField, "gol" AS resultField, "Memphis" AS nome_jogado
+            ;;
+  }
+
+  dimension: xField {
+    type: number
+    sql: ${TABLE}.xField ;;
+  }
+
+  dimension: yField {
+    type: number
+    sql: ${TABLE}.yField ;;
+  }
+
+  dimension: resultField {
+    type: string
+    sql: ${TABLE}.resultField ;;
+  }
+
+  dimension: nomejogador {
+    type: string
+    sql: ${TABLE}.nome_jogado ;;
+  }
+
+}
